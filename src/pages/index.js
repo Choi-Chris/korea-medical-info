@@ -1,113 +1,59 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Head from 'next/head'
+import SummaryBox from '@/components/SummaryBox'
+import IntroText from '@/components/Introtext'
+import WegovyPrice from '@/components/WegovyPrice'
+import WegovyDosePrice from '@/components/WegovyDosePrice'
+import WegovyCheapTips from '@/components/WegovyCheapTips'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <>
+      <Head>
+        <title>서울 위고비 가격 성지 찾기 | 2025</title>
+        <meta name="description" content="2025년 기준 서울 위고비 가격, 싸게 맞는 방법, 후기까지 한눈에 정리한 정보 페이지입니다." />
+        <meta name="keywords" content="위고비 가격, 서울 병원, 약국, 위고비 후기, 다이어트 주사" />
+        <meta property="og:title" content="서울 위고비 가격 총정리 | 2025" />
+        <meta property="og:description" content="서울에서 위고비 싸게 맞는 팁, 병원 후기까지 요약!" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+
+      <main className="max-w-2xl mx-auto px-4 py-8">
+        <h1 className="text-2xl font-bold mb-6 border-b pb-2">
+          서울 위고비 가격 병원 / 약국 알아보기 - 2025년
+        </h1>
+
+        <SummaryBox />
+
+        <IntroText />
+
+        <section className="mt-8 space-y-4">
+          <div className="bg-sky-600 text-white font-semibold p-3 rounded">
+            위고비 효과, 진짜 있을까요?
+          </div>
+          <p className="text-gray-800">
+            위고비는 삭센다와 같은 기존 다이어트 주사제보다 가격대가 높아, 사람들이 진짜 효과가 있는 지 궁금해 하기도 하는데요, 위고비를 실제로 맞아보면 다음과 같은 효과가 있다고 합니다.
+          </p>
+          <ol className="list-decimal list-inside space-y-2">
+            <li><strong> 식욕 감소 </strong>
+              <ul className="list-disc ml-5">
+                <li> 위고비의 주 성분인 세마글루티드의 가장 큰 효과는 식욕을 줄여주고, 위의 배출 속도를 늦추어 포만감을 긴 시간 동안 유지시켜준다는 점입니다. 위고비를 맞다보면 1일 식사량도 줄어들게 된다고 많이들 알려져 있습니다. </li>
+              </ul>
+            </li>
+            <li><strong> 체중 감소</strong>
+              <ul className="list-disc ml-5">
+                <li> 위고비는 투여하고 나면 보통 2~4주 후 부터 체중 변화가 나타난다고 합니다. 적게는 1~2kg부터 많게는 5kg 이상까지 짧은 시간에 효과가 큰 다이어트 요법으로 알려져 있습니다. </li>
+                <li> 실제로 위고비의 제약사인 노보노디스크사의 위고비 임상 결과에 따르면, 위고비 임상 연구 결과 실험의 대조군 대비 <strong> 68주 간 15% 이상의 체중 감량 효과</strong>가 입증되었다고 합니다. </li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <WegovyPrice/>
+
+        <WegovyDosePrice/>
+
+        <WegovyCheapTips/>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    </>
+  )
 }
