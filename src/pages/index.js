@@ -16,7 +16,7 @@ export default function HomePage() {
         {sortedRegions.map((region) => (
           <Link
             key={region.slug}
-            href={`/korea-medical-info/${region.slug}`}
+            href={`/regions/${region.slug}`}
             className="flex items-center gap-4 p-4 border rounded-xl hover:shadow transition"
           >
             <img
