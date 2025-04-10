@@ -1,12 +1,18 @@
 // pages/index.js
+import { useRouter } from "next/router";
 import regionData from "@/data/regions";
-import Link from "next/link";
 
 export default function HomePage() {
+  const router = useRouter();
+  const year = new Date().getFullYear();
+
   const sortedRegions = Object.values(regionData).sort(
     (a, b) => new Date(b.lastModified) - new Date(a.lastModified)
-  )
-  const year = new Date().getFullYear();
+  );
+
+  const handleRegionClick = (slug) => {
+    router.push(`/regions/${slug}`);
+  };
 
   return (
     <main className="px-6 py-12 max-w-5xl mx-auto">
@@ -14,10 +20,10 @@ export default function HomePage() {
 
       <section className="space-y-6">
         {sortedRegions.map((region) => (
-          <Link
+          <button
             key={region.slug}
-            href={`/regions/${region.slug}`}
-            className="flex items-center gap-4 p-4 border rounded-xl hover:shadow transition"
+            onClick={() => handleRegionClick(region.slug)}
+            className="w-full text-left flex items-center gap-4 p-4 border rounded-xl hover:shadow transition"
           >
             <img
               src={region.image}
@@ -31,7 +37,7 @@ export default function HomePage() {
                 업데이트: {region.lastModified}
               </div>
             </div>
-          </Link>
+          </button>
         ))}
       </section>
     </main>

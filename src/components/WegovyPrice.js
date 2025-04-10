@@ -1,12 +1,18 @@
-export default function WegovyPrice() {
+import { useRouter } from 'next/router';
+
+// export default function SummaryBox({region }) {
+  // const year = new Date().getFullYear();
+  // const city = region.title.replace(' 위고비', '');
+
+export default function WegovyPrice({region}) {
   return (
     <section className="mt-10 space-y-4">
       <div className="bg-sky-600 text-white font-semibold p-3 rounded">
-        서울 위고비 가격, 얼마일까?
+        {region.region} 위고비 가격, 얼마일까?
       </div>
 
       <p className="text-gray-800">
-        <strong>서울 내 병원, 약국에서 판매되는 위고비의 가격은 평균 40~60만원</strong>입니다.
+        <strong> {region.region} 내 병원, 약국에서 판매되는 위고비의 가격은 평균 {((region.minPrice+region.minPrice)/2).toLocaleString()}원</strong>입니다.
         한 펜당 가격이며 (주 1회, 4번~한 달), 1달 가격이 저 정도라고 생각하시면 됩니다.
       </p>
 

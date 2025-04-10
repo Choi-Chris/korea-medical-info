@@ -1,3 +1,5 @@
+import regionData from '@/data/regions';
+
 export default function IntroText() {
   return (
     <div className="text-base leading-relaxed text-gray-800 space-y-4">

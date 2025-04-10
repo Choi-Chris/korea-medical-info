@@ -47,10 +47,13 @@ export default function RegionPage({ region }) {
 
       <main className="max-w-2xl mx-auto px-4 py-8">
         <h1 className="text-2xl font-bold mb-6 border-b pb-2">
-          {region.title} 병원 / 약국 알아보기 - {year}년
+          {region.title} 가격 및 최저가 병원 / 약국 알아보기 - {year}년
         </h1>
+        <h2> 
+          위고비 가격 전국 데이터 수집 결과,
+          {region.region}의 위고비 최저가는 {region.minPrice.toLocaleString()}원 입니다. </h2>
 
-        <SummaryBox />
+        <SummaryBox region={region} />
         <IntroText />
         <section className="mt-8 space-y-4">
           <div className="bg-sky-600 text-white font-semibold p-3 rounded">
@@ -74,7 +77,7 @@ export default function RegionPage({ region }) {
           </ol>
         </section>
 
-        <WegovyPrice />
+        <WegovyPrice region={region}/>
         <WegovyDosePrice />
         <WegovyCheapTips />
       </main>
